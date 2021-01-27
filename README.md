@@ -1,24 +1,34 @@
-# README
+### Background:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A group event will be created by an user. The group event should run for a whole number of days e.g.. 30 or 60. There should be attributes to set and update the start, end and duration of the event and calculate the missing value if 2 are given. The event also has a name, description (which supports formatting) and location. The event should be draft or published. To publish all of the fields are required, it can be saved with only a subset of fields before it’s published. When the event is deleted/remove it should be kept in the database and marked as such.
 
-Things you may want to cover:
+### Deliverable:
 
-* Ruby version
+Write an AR model, spec and migration for a GroupEvent that would meet the needs of the description above. Then write the api controller and spec to support JSON request/responses to manage these GroupEvents. For the purposes of this exercise, ignore auth. Please provide your solution as a rails app called exercise_YYMMDD_yourname, sent as a zip file.
 
-* System dependencies
+### Setup
 
-* Configuration
+1. copy the file **_.env.example_** to **_.env_** and set it with your database configuration.
+2. After that, run this commands (I suppose you already have a ruby environment):
 
-* Database creation
+```
+bundle
+```
 
-* Database initialization
+```
+bundle exec rails db:create
+```
 
-* How to run the test suite
+```
+bundle exec rails db:migrate
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+RAILS_ENV=test bundle exec rails db:migrate
+```
 
-* Deployment instructions
+3. to run tests, use this command:
 
-* ...
+```
+bundle exec rspec
+```
